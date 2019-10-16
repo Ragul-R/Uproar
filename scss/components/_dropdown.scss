@@ -1,0 +1,49 @@
+.lang-dropdown {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    width: 100px;
+    border-left: 1px solid $border-color;
+    .lang-btn{
+        padding-left: 20px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    .arrow-down::after {
+        transition: transform ease 400ms;
+        margin-left: 10px;
+    }
+
+    .lang-list {
+        position: absolute;
+        background: $dark-active;
+        top: 30px;
+        height: 0;
+        overflow: auto;
+        width: 100%;
+        left: 0;
+        border-radius: 4px;
+        transition: height 450ms ease;
+
+        li {
+            display: block;
+            text-transform: capitalize;
+            padding: 7px 20px;
+            span{
+                display: inline-block;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.show-lang{
+    .arrow-down{
+        &::after{
+            transform: rotate(180deg);
+        }
+    }
+    .lang-list{
+        height: 180px;
+    }
+}

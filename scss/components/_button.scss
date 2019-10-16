@@ -1,0 +1,59 @@
+button{
+    border: none;
+    background: unset;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    &:focus{
+        outline: none;
+    }
+}
+.btn-primary{
+    background-image: linear-gradient(to right, #6b69f9, $primary-color);
+    padding: 7px 18px;
+    border-radius: 4px;
+    width: 95px;
+    height: 30px;
+    font-size: 12px;
+    text-transform: capitalize;
+
+    &:focus{
+        box-shadow: 0 0 12px 0 $primary-color;
+    }
+}
+
+.btn-next,.btn-prev{
+    border-radius: 4px;
+    border: 1px solid rgba(#fff,.15);
+    height: 30px;
+    width: 30px;
+}
+
+.toggle-switch{
+    width: 42px;
+    height: 22px;
+    border: 1px solid rgba(#fff,.2);
+    border-radius: 15px;
+    float: right;
+    position: relative;
+    transition: all ease 300ms;
+    &::before{
+        content:'';
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        background: $primary-color;
+        border-radius: 50%;
+        top:2px;
+        right: 3px;
+        transition: all ease 300ms;
+    }
+}
+.switched{
+    background: rgba($primary-color,.3);
+    &::before{
+        right: 22px;
+    }
+}

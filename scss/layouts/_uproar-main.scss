@@ -1,0 +1,132 @@
+.uproar-main {
+    padding: 40px 55px 70px;
+    float: left;
+    max-width: calc(100% - 280px);
+    height: inherit;
+    overflow: auto;
+    width: 100%;
+    color: #fff;
+
+    h3 {
+        color: rgba(#fff, .4);
+    }
+
+    .uproar-head {
+        .uproar-caption {
+            float: left;
+        }
+
+        .btn-wrapper {
+            float: right;
+            font-size: 0;
+
+            .btn-primary {
+                margin-right: 10px;
+            }
+
+            .btn-next {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.uproar-quests {
+    margin-bottom: 40px;
+}
+
+.games-list {
+    font-size: 0;
+    margin-top: 25px;
+}
+
+.card {
+    display: inline-block;
+    border-radius: 8px;
+    background: rgba(#fff, .04);
+    width: calc(100%/4 - 8px);
+
+    &+.card{
+        margin-left: 10px;
+    }
+
+
+    figure {
+        font-size: 0;
+
+        img {
+            border-radius: 8px 8px 0 0;
+        }
+    }
+    .game-desc {
+        padding: 15px 15px 20px;
+        width: 255px;
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            @include text-overflow(100%,null);
+        }
+
+        p {
+            color: rgba(#fff, .5);
+            min-height: 36px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .card-footer {
+        padding: 15px;
+        font-size: 13px;
+        font-size: 0;
+        border-top: 1px solid $border-color;
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 13px;
+            line-height: 30px;
+
+            svg {
+                margin-right: 10px;
+            }
+
+            margin-right: 15px;
+        }
+
+        .btn-primary {
+            float: right;
+            vertical-align: middle;
+            font-size: 13px;
+            padding: 5px 15px;
+            height: 30px;
+            width: 75px;
+        }
+    }
+}
+
+.game-card {
+    figure {
+        display: inline-block;
+        img {
+            margin: -10px 0 0 15px;
+            border-radius: 8px;
+        }
+    }
+    .game-desc {
+        display: inline-block;
+        width: 169px;
+        vertical-align: top;
+
+        p{
+            margin: 0;
+        }
+    }
+    .b-action{
+        &::before{
+            top: 50px;
+            left: 25px;
+        }
+    }
+}

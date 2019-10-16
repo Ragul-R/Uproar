@@ -1,0 +1,140 @@
+.clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.container {
+    width: 1060px;
+    margin: auto;
+}
+
+.badge {
+    font-size: 12px;
+    line-height: 10px;
+    text-transform: none;
+    background: $dark-active;
+    padding: 4px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+%arrow{
+    &::after{
+        content:'';
+        display: inline-block;
+        border-style: solid;
+    }
+}
+.arrow-down{
+    @extend %arrow;
+    &::after{
+        border-width: 5px 5px 0 5px;
+        border-color: #fff transparent transparent transparent;
+    }
+}
+
+
+%angle{
+    &::before{
+        content: '';
+        display: inline-block;
+        border: solid #fff;
+        height: 6px;
+        width: 6px;
+        transform: rotate(45deg);
+    }
+}
+.drop-icon {
+    @extend %angle;
+    float: right;
+
+    &::before {
+        border-width: 0 2px 2px 0;
+        transition: transform 300ms ease;
+    }
+    .drop-open &{
+        &::before{
+            transform: rotate(225deg);
+        }
+    }
+}
+.angle-right{
+    @extend %angle;
+    &::before {
+        border-width: 2px 2px 0 0;
+    }
+}
+.angle-left{
+    @extend %angle;
+    &::before {
+        border-width: 0 0 2px 2px;
+    }
+}
+
+
+
+.account-pro{
+    &::after{
+        content: 'pro';
+        text-transform: uppercase;
+        display: inline-block;
+        background-color: $primary-color;
+        padding: 2px 10px;
+        border-radius: 4px;
+        line-height: 12px;
+        margin-left: 13px;
+        box-shadow: 0 0  12px 0 rgba($primary-color,.5);
+    }
+}
+
+.status-online{
+    color: $online-color;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+
+    &::before{
+        content:'';
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: $online-color;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}
+
+.icon-plus{
+    &::after{
+        content:'\002B';
+        font-size: 16px;
+        vertical-align: middle;
+    }
+}
+
+%b{
+    position: relative;
+    &::before{
+        text-transform: capitalize;
+        font-size:12px;
+        line-height: 12px;
+        position: absolute;
+        top:15px;
+        left: 15px;
+        background-color: $primary-color;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+}
+.b-action{
+    @extend %b;
+    &::before{
+        content:'action';
+    }
+}

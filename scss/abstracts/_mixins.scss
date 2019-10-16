@@ -1,0 +1,14 @@
+@mixin text-overflow($width:'inherit',$height:'inherit'){
+    min-height: $height;
+    width: $width;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin icon($width,$height){
+    width: $width;
+    height: $height;
+    fill: #fff;
+    vertical-align: middle;
+}

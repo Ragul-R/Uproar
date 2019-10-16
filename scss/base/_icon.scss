@@ -1,0 +1,29 @@
+.icon-action,.icon-adventure,.icon-strategy,.icon-casual,.icon-intellectual,.icon-sports{
+    @include icon(18px,18px);
+    fill-opacity: .5;
+    .category-list>li:hover &{
+        fill: $primary-color;
+        fill-opacity: 1;
+    }
+}
+.icon-grid{
+    @include icon(14px,14px);
+}
+.icon-power,.icon-logo{
+    @include icon(12px,12px);
+    padding: 3px;
+    border-radius: 4px;
+}
+.icon-power{
+    background: $bright-red;
+    box-shadow: 0 0 12px 0 rgba($bright-red,.5);
+}
+.icon-logo{
+    background: $primary-color;
+    box-shadow: 0 0 12px 0 rgba($primary-color, 0.5);
+}
+
+.icon-flag{
+    @include icon(14px,14px);
+    margin-right: 5px;
+}
