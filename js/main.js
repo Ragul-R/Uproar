@@ -1,7 +1,8 @@
 var toggleBtn = document.getElementsByClassName('toggle-switch')[0];
 var dropdownBtn = Array.from(document.getElementsByClassName('drop-btn'));
 var langDropBtn = document.getElementsByClassName('lang-btn')[0];
-var langList = document.querySelectorAll('.lang-list>li>span');
+var langList = document.querySelectorAll('.lang-list>li');
+var langDrop = langList[0].closest('.lang-dropdown');
 var animateContainer = document.getElementsByClassName('uproar-main')[0];
 var animateElem = document.querySelectorAll('[data-animate]');
 
@@ -30,7 +31,11 @@ function selectLang(lang){
 }
 
 function animateOnScroll(){
-    console.log(animateContainer.scrollTop,animateElem[8].offsetTop,animateElem[8]);
+    for(var i = 0; i < animateElem.length; i++){
+        if((animateElem[i].offsetTop - animateContainer.scrollTop) < (window.innerHeight - 70) && !animateElem[i].classList.contains('fade-in')){
+            animateElem[i].classList.add('fade-in');
+        }
+    }
 }
 
 //Window Load Function
@@ -51,9 +56,9 @@ window.addEventListener('load',function(){
         })
     })
 
-    //Lang drop
-    langDropBtn.addEventListener('click', function(event){
-        langDropBtn.closest('.lang-dropdown').classList.toggle('show-lang');
+    //Language drop
+    langDropBtn.addEventListener('click', function(){
+        langDrop.classList.toggle('show-lang');
     })
 
     //Change Lang
@@ -63,8 +68,21 @@ window.addEventListener('load',function(){
         })
     })
 
+    //animate On Load
+    animateOnScroll()
+
     //animate on scroll
     animateContainer.addEventListener('scroll', function(event){
         animateOnScroll();
     })
+})
+
+//Window on click
+window.addEventListener('click', function(event){
+    var target = event.target;
+
+    //Remove langage dropdown
+    if(!target.closest('.lang-dropdown') && langDrop.classList.contains('show-lang')){
+        langDrop.classList.remove('show-lang')
+    }
 })

@@ -19,7 +19,7 @@ button{
     font-size: 12px;
     text-transform: capitalize;
 
-    &:focus{
+    &:focus,&:hover{
         box-shadow: 0 0 12px 0 $primary-color;
     }
 }
@@ -52,8 +52,8 @@ button{
     }
 }
 .switched{
-    background: rgba($primary-color,.3);
     &::before{
         right: 22px;
+        background: #fff;
     }
 }

@@ -1,15 +1,31 @@
-@keyframes slideIn{
+.fade-in{
+    animation: fadein ease 1s forwards;
+}
+
+
+[data-animate="fade-in"]{
+    opacity: 0;
+}
+
+[data-animate="fade-in"][data-animate-delay="0"].fade-in{animation-delay: 0s;}
+[data-animate="fade-in"][data-animate-delay="1"].fade-in{animation-delay: .1s;}
+[data-animate="fade-in"][data-animate-delay="2"].fade-in{animation-delay: .2s;}
+[data-animate="fade-in"][data-animate-delay="3"].fade-in{animation-delay: .3s;}
+[data-animate="fade-in"][data-animate-delay="4"].fade-in{animation-delay: .4s;}
+[data-animate="fade-in"][data-animate-delay="5"].fade-in{animation-delay: .5s;}
+[data-animate="fade-in"][data-animate-delay="6"].fade-in{animation-delay: .6s;}
+[data-animate="fade-in"][data-animate-delay="7"].fade-in{animation-delay: .7s;}
+[data-animate="fade-in"][data-animate-delay="8"].fade-in{animation-delay: .8s;}
+[data-animate="fade-in"][data-animate-delay="9"].fade-in{animation-delay: .9s;}
+[data-animate="fade-in"][data-animate-delay="10"].fade-in{animation-delay: 1s;}
+
+@keyframes fadein{
     0%{
-        transform: translateY(150px);
+        transform: translateY(30px);
         opacity: 0;
     }
     100%{
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-
-.slideIn{
-    animation: slideIn ease 1.5s;
 }

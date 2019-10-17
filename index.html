@@ -306,7 +306,7 @@
                 <a href="javascript:void(0);">Support</a>
             </li>
             <li class="lang-dropdown">
-                <div class="lang-btn arrow-down">
+                <div tabindex="0" class="lang-btn arrow-down">
                     <span class="lang-en selected">eng</span>
                 </div>
                 <ul class="lang-list">
@@ -381,21 +381,20 @@
         </ul>
 
         <nav class="user-profile">
-            <div class="badge points">
+            <button class="badge points">
                 <svg class="icon-logo">
                     <use href="#icon-logo"></use>
                 </svg>
                 <span>650</span>
-                <button>&#43;</button>
-            </div>
+            </button>
 
-            <div class="badge power">
+            <button class="badge power">
                 <svg class="icon-power">
                     <use href="#icon-power"></use>
                 </svg>
                 <span>1200</span>
                 <sup>+5/hour</sup>
-            </div>
+            </button>
 
             <figure>
                 <img src="images/avatar.jpg" alt="user-image" srcset="images/avatar@2x.jpg 2x, images/avatar@3x.jpg 3x">
@@ -492,10 +491,10 @@
             </div>
         </aside>
         <section class="uproar-main">
-            <article class="uproar-quests" data-animate="slideIn">
+            <article class="uproar-quests" data-animate="fade-in" data-animate-delay="0">
                 <div class="uproar-head clear">
                     <div class="uproar-caption">
-                        <h3>dont miss this</h3>
+                        <span>dont miss this</span>
                         <h2>weekly quest</h2>
                     </div>
 
@@ -506,7 +505,7 @@
                     </div>
                 </div>
                 <ul class="games-list">
-                    <li class="card" data-animate="slideIn">
+                    <li class="card" data-animate="fade-in" data-animate-delay="2">
 
                         <figure class="b-action">
                             <img src="images/pubg-banner.jpg" alt="pubg"
@@ -534,7 +533,7 @@
                         </div>
                     </li>
 
-                    <li class="card" data-animate="slideIn">
+                    <li class="card" data-animate="fade-in" data-animate-delay="4">
 
                         <figure class="b-action">
                             <img src="images/mayhem-banner.jpg" alt="pubg"
@@ -562,7 +561,7 @@
                         </div>
                     </li>
 
-                    <li class="card" data-animate="slideIn">
+                    <li class="card" data-animate="fade-in" data-animate-delay="6">
 
                         <figure class="b-action">
                             <img src="images/borito-banner.jpg" alt="pubg"
@@ -589,7 +588,7 @@
                         </div>
                     </li>
 
-                    <li class="card" data-animate="slideIn">
+                    <li class="card" data-animate="fade-in" data-animate-delay="8">
 
                         <figure class="b-action">
                             <img src="images/battlelands-banner.jpg" alt="pubg"
@@ -620,9 +619,9 @@
             </article>
 
             <article class="uproar-popular">
-                <div class="uproar-head clear" data-animate="slideIn">
+                <div class="uproar-head clear" data-animate="fade-in" data-animate-delay="0">
                     <div class="uproar-caption">
-                        <h3>to the top</h3>
+                        <span>to the top</span>
                         <h2>popular games</h2>
                     </div>
 
@@ -633,7 +632,7 @@
                     </div>
                 </div>
                 <ul class="games-list">
-                    <li class="game-card card" data-animate="slideIn">
+                    <li class="game-card card" data-animate="fade-in" data-animate-delay="2">
                         <figure class="b-action">
                             <img src="images/starknight-icon.jpg" alt="starknight">
                         </figure>
@@ -658,7 +657,7 @@
                         </div>
                     </li>
 
-                    <li class="game-card card" data-animate="slideIn">
+                    <li class="game-card card" data-animate="fade-in" data-animate-delay="4">
                         <figure class="b-action">
                             <img src="images/takingtom-gold-icon.jpg" alt="talking-tom-gold">
                         </figure>
@@ -683,7 +682,7 @@
                         </div>
                     </li>
 
-                    <li class="game-card card" data-animate="slideIn">
+                    <li class="game-card card" data-animate="fade-in" data-animate-delay="6">
                         <figure class="b-action">
                             <img src="images/gunsofboom-icon.jpg" alt="gunsofboom">
                         </figure>
@@ -708,7 +707,7 @@
                         </div>
                     </li>
 
-                    <li class="game-card card" data-animate="slideIn">
+                    <li class="game-card card" data-animate="fade-in" data-animate-delay="8">
                         <figure class="b-action">
                             <img src="images/shadowfight2-icon-icon.jpg" alt="shadowfight2">
                         </figure>
