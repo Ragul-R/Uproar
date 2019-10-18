@@ -14,7 +14,8 @@
     .uproar-head {
         .uproar-caption {
             float: left;
-            span{
+
+            span {
                 font-weight: 600;
                 font-size: 11px;
                 color: rgba(#fff, .4);
@@ -47,23 +48,26 @@
 }
 
 .card {
-    display: inline-block;
+    float: left;
+    width: calc(100%/4 - 10px);
+    transition: all ease 300ms;
     border-radius: 8px;
-    background: rgba(#fff, .04);
-    width: calc(100%/4 - 8px);
+    background: #3a3846;
 
-    &+.card{
+    &+.card {
         margin-left: 10px;
     }
 
-
     figure {
         font-size: 0;
+        z-index: -1;
 
         img {
             border-radius: 8px 8px 0 0;
+            width: 100%;
         }
     }
+
     .game-desc {
         padding: 15px 15px 20px;
         width: 255px;
@@ -72,7 +76,7 @@
             margin-bottom: 10px;
             font-size: 16px;
             margin-bottom: 10px;
-            @include text-overflow(100%,null);
+            @include text-overflow(100%, null);
         }
 
         p {
@@ -109,29 +113,80 @@
             width: 75px;
         }
     }
+
+    &:hover {
+        box-shadow: 10px 10px 0 -3px rgba(#fff, .3);
+    }
 }
 
 .game-card {
+    background: #3a3846;
+
     figure {
         display: inline-block;
+        width: 70px;
+        margin: -10px 0 0 15px;
+        height: 70px;
+
         img {
-            margin: -10px 0 0 15px;
             border-radius: 8px;
         }
     }
+
     .game-desc {
         display: inline-block;
-        width: 169px;
+        width: 142px;
         vertical-align: top;
+        margin: 15px 12px 20px;
+        padding: 0;
 
-        p{
+        p {
             margin: 0;
         }
     }
-    .b-action{
-        &::before{
-            top: 50px;
-            left: 25px;
+
+    .b-action {
+        &::before {
+            top: 60px;
+            left: 10px;
         }
     }
+}
+
+.completed {
+    animation: disaprear ease-in-out .5s 0s forwards !important;
+}
+
+.alert{
+    background: $dark-active;
+    @include center(true,false);
+    transform: translate(-50%,0);
+    opacity: 0;
+    visibility: hidden;
+    width: 350px;
+    text-align: center;
+    border-radius: 8px;
+    color: #fff;
+    transition: all ease .5s;
+    button{
+        float: right;
+        padding: 7px;
+    }
+    .alert-content{
+        width: 180px;
+        margin: 30px auto;
+
+        p{
+            font-size: 18px;
+            line-height: 20px;
+            color: #fff;
+            margin-top: 20px;
+            text-transform: capitalize;
+        }
+    }
+}
+.show-alert{
+    transform: translate(-50%,120px);
+    opacity: 1;
+    visibility: visible;
 }

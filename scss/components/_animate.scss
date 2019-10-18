@@ -2,6 +2,9 @@
     animation: fadein ease 1s forwards;
 }
 
+.shake{
+    animation: shake ease 1.2s forwards;
+}
 
 [data-animate="fade-in"]{
     opacity: 0;
@@ -27,5 +30,18 @@
     100%{
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes disaprear{
+    0%{
+        margin-left:0;
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        margin-left: -275px;
     }
 }

@@ -12,3 +12,19 @@
     fill: #fff;
     vertical-align: middle;
 }
+
+@mixin center($x:true,$y:true){
+    position: absolute;
+    @if $x and $y{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }@else if($x){
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @else if($y){
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

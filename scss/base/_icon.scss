@@ -27,3 +27,7 @@
     @include icon(14px,14px);
     margin-right: 5px;
 }
+
+.icon-lowpower{
+    @include icon(80px,80px);
+}

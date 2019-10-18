@@ -138,3 +138,25 @@
         content:'action';
     }
 }
+
+.icon-close{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+    &::before,&::after{
+        content:'';
+        display: inline-block;
+        position: relative;
+        height: 20px;
+        width: 3px;
+        background: #fff;
+        
+    }
+    &::after{
+        transform: rotate(-45deg) translateY(-2px);
+    }
+    &::before{
+        transform: rotate(45deg) translateY(-2px);
+    }
+}

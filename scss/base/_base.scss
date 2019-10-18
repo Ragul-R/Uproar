@@ -13,6 +13,7 @@ sup {
 main {
     background-image: linear-gradient(to bottom, $dark-bg-top 0%, $dark-bg-bottom 100%);
     height: calc(100vh - 70px);
+    position: relative;
 }
 
 p {
