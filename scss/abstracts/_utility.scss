@@ -132,10 +132,10 @@
         border-radius: 4px;
     }
 }
-.b-action{
+.card figure{
     @extend %b;
     &::before{
-        content:'action';
+        content: attr(data-catagory);
     }
 }
 
@@ -158,5 +158,11 @@
     }
     &::before{
         transform: rotate(45deg) translateY(-2px);
+    }
+}
+
+@for $i from 1 through 8{
+    .card-#{$i} > li{
+        width: calc(100% / #{$i} - 10px);
     }
 }

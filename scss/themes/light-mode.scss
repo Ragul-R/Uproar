@@ -1,0 +1,41 @@
+.light{
+    .badge{
+        background: $light-active;
+        color: rgba(#000,.6);
+    }
+    header{
+        background-image: linear-gradient(to right, $light-sidebar-bg 0%, $light-sidebar-bg 19.4%, $light-bg-top 19.4%, $light-bg-top 100%);
+        color: #000;
+
+        .nav-main{
+            color: rgba(0,0,0,.6);
+        }
+
+        .lang-dropdown{
+            color: #000;
+            .lang-btn{
+                &::after{
+                    border-color: #000 transparent transparent transparent;
+                }
+            }
+            .lang-list{
+                background: $light-active;
+            }
+        }
+    }
+    aside{
+        background: $light-sidebar-bg;
+        color: #000;
+
+        .drop-icon{
+            &::before{
+                border-color: #000;
+            }
+        }
+
+        
+    }
+    .icon-grid,.icon-adventure,.icon-action,.icon-strategy,.icon-casual,.icon-intellectual{
+        fill: #000;
+    }
+}

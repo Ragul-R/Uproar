@@ -10,7 +10,8 @@
     h3 {
         color: rgba(#fff, .4);
     }
-
+}
+.uproar-row{
     .uproar-head {
         .uproar-caption {
             float: left;
@@ -31,46 +32,48 @@
                 margin-right: 10px;
             }
 
-            .btn-next {
+            .btn-prev {
                 margin-right: 5px;
             }
         }
     }
 }
 
-.uproar-quests {
-    margin-bottom: 40px;
+.uproar-quests,.uproar-popular{
+    padding-bottom: 40px;
+    overflow: hidden;
 }
 
 .games-list {
     font-size: 0;
     margin-top: 25px;
+    white-space: nowrap;
+    transition: all ease .7s;
 }
 
 .card {
-    float: left;
-    width: calc(100%/4 - 10px);
+    min-width: calc(265px - 10px);
+    display: inline-block;
     transition: all ease 300ms;
-    border-radius: 8px;
+    border-radius: 6px;
     background: #3a3846;
+    margin-right: 10px;
 
-    &+.card {
-        margin-left: 10px;
+    &:hover{
+        box-shadow: 1px 1px 10px 10px rgba(#000,.15);
     }
-
     figure {
         font-size: 0;
-        z-index: -1;
 
         img {
-            border-radius: 8px 8px 0 0;
+            border-radius: 6px 6px 0 0;
             width: 100%;
         }
     }
 
     .game-desc {
-        padding: 15px 15px 20px;
-        width: 255px;
+        padding: 15px;
+        white-space: initial;
 
         h2 {
             margin-bottom: 10px;
@@ -81,8 +84,9 @@
 
         p {
             color: rgba(#fff, .5);
-            min-height: 36px;
-            margin-bottom: 15px;
+            height: 36px;
+            max-height: 54px;
+            overflow: hidden;
         }
     }
 
@@ -91,7 +95,6 @@
         font-size: 13px;
         font-size: 0;
         border-top: 1px solid $border-color;
-
         span {
             display: inline-block;
             font-size: 13px;
@@ -105,18 +108,17 @@
         }
 
         .btn-primary {
-            float: right;
-            vertical-align: middle;
             font-size: 13px;
-            padding: 5px 15px;
+            padding: 7px 10px;
             height: 30px;
-            width: 75px;
+            float: right;
         }
     }
+}
 
-    &:hover {
-        box-shadow: 10px 10px 0 -3px rgba(#fff, .3);
-    }
+.show-card{
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 .game-card {
@@ -131,11 +133,17 @@
         img {
             border-radius: 8px;
         }
+
+        &::before{
+            top: unset;
+            bottom: -10px;
+            left: 10px;
+        }
     }
 
     .game-desc {
         display: inline-block;
-        width: 142px;
+        width: calc(100% - 110px);
         vertical-align: top;
         margin: 15px 12px 20px;
         padding: 0;
@@ -144,23 +152,16 @@
             margin: 0;
         }
     }
-
-    .b-action {
-        &::before {
-            top: 60px;
-            left: 10px;
-        }
-    }
 }
 
 .completed {
-    animation: disaprear ease-in-out .5s 0s forwards !important;
+    animation: disaprear ease-in-out .5s forwards;
 }
 
 .alert{
     background: $dark-active;
-    @include center(true,false);
-    transform: translate(-50%,0);
+    @include center();
+    transform: translate(-50%,-100%);
     opacity: 0;
     visibility: hidden;
     width: 350px;
@@ -168,6 +169,8 @@
     border-radius: 8px;
     color: #fff;
     transition: all ease .5s;
+    transform-origin: left;
+
     button{
         float: right;
         padding: 7px;
@@ -186,7 +189,12 @@
     }
 }
 .show-alert{
-    transform: translate(-50%,120px);
+    transform: translate(-50%,-50%);
+    box-shadow: 1px 1px 10px 10px rgba(#000, .2);
     opacity: 1;
     visibility: visible;
+
+    .icon-lowpower{
+        animation: shake linear .2s 2;
+    }
 }

@@ -2,21 +2,24 @@
     background-color: $sidebar-bg;
     width: 280px;
     height: inherit;
-    overflow: hidden;
     float: left;
     color: #fff;
     position: relative;
 }
 
 .sidebar-nav {
+    max-height: calc(100% - 63px);
+    height: 100%;
+    overflow: auto;
+
     &>li {
         padding: 20px 0;
         border-bottom: 1px solid $border-color;
-
+        a{
+            display: block;
+        }
+        
         &>a {
-            display: inline-block;
-            width: 100%;
-            text-align: left;
             padding: 7px 30px;
             font-weight: 600;
             text-transform: uppercase;
@@ -30,13 +33,11 @@
     font-size: 14px;
     line-height: 18px;
     &>li {
-        text-transform: capitalize;
-
-        &>a {
-            display: inline-block;
+        a {
             margin: 0 30px;
             padding: 10px 0;
             width: calc(100% - 60px);
+            text-transform: capitalize;
         }
 
     }
@@ -49,12 +50,12 @@
 
 .category-list {
     li {
-        padding: 10px 50px;
         border-left: 3px solid transparent;
 
-        &>a {
-            display: inline-block;
-            width: 100%;
+        a {
+            width: calc(100% - 80px);
+            margin: 0 30px 0 50px;
+            font-weight: normal;
             color: rgba(255, 255, 255, .5);
 
             svg {
@@ -82,8 +83,6 @@
     }
 }
 .mode-switch{
-    position: absolute;
-    bottom:0;
     width: 100%;
     padding: 20px 30px;
     border-top: 1px solid $border-color;

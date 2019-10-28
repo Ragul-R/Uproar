@@ -25,9 +25,12 @@
 
 .icon-flag{
     @include icon(14px,14px);
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .icon-lowpower{
     @include icon(80px,80px);
+    padding: 10px;
+    background: $bright-red;
+    border-radius: 15px;
 }

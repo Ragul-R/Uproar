@@ -33,10 +33,13 @@
             text-transform: capitalize;
             padding: 7px 20px;
             transition: background 150ms ease;
+            margin: 0;
+            line-height: normal;
+            
             span{
                 display: inline-block;
-                width: 100%;
                 cursor: pointer;
+                vertical-align: middle;
             }
             &:hover{
                 background-color: rgba(#fff,.2);
@@ -51,6 +54,7 @@
         }
     }
     .lang-list{
+        box-shadow: 1px 1px 5px 5px rgba(#000,.2);
         height: 130px;
     }
 }
