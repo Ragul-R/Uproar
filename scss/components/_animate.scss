@@ -20,13 +20,9 @@
     opacity: 1; 
 }
 
-[data-animate="fade-in"][data-animate-delay="0"].show-card{transition: transform ease-in-out .8s 0s, opacity ease-in-out .8s 0s, box-shadow ease .2s;}
-[data-animate="fade-in"][data-animate-delay="2"].show-card{transition: transform ease-in-out .8s .2s, opacity ease-in-out .8s .2s, box-shadow ease .2s;}
-[data-animate="fade-in"][data-animate-delay="4"].show-card{transition: transform ease-in-out .8s .4s, opacity ease-in-out .8s .4s, box-shadow ease .2s;}
-[data-animate="fade-in"][data-animate-delay="6"].show-card{transition: transform ease-in-out .8s .6s, opacity ease-in-out .8s .6s, box-shadow ease .2s;}
-[data-animate="fade-in"][data-animate-delay="8"].show-card{transition: transform ease-in-out .8s .8s, opacity ease-in-out .8s .8s, box-shadow ease .2s;}
-[data-animate="fade-in"][data-animate-delay="10"].show-card{transition: transform ease-in-out .8s 1s, opacity ease-in-out .8s 1s, box-shadow ease .2s;}
-
+@for $i from 0 through 10{
+    [data-animate="fade-in"][data-animate-delay="#{$i * 2}"]{transition: transform ease-in-out .8s #{$i * 0.2}s, opacity ease-in-out .8s #{$i * 0.2}s}
+}
 
 @keyframes disaprear{
     0%{
@@ -34,7 +30,7 @@
         opacity: 1;
     }
     100%{
-        margin-left: calc(-100%/4);
+        margin-left: calc(-265px);
         opacity: 0;
     }
 }

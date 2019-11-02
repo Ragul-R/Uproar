@@ -170,24 +170,28 @@ function updateList(list,n){
     
 }
 
-function slideInit(){
+function slideInit(resize){
     var slideContainer = document.querySelectorAll('.games-list');
     maxCards = Math.floor(slideContainer[0].offsetWidth / 255);
 
     for(var i = 0; i < slideContainer.length; i++){
+        resize ? slideContainer[i].innerHTML = '' : false;
+        slideContainer[i].classList.remove(`card-${maxCards-1}`,`card-${maxCards+1}`)
         slideContainer[i].classList.add(`card-${maxCards}`)
-        loadCards(slideContainer[i],maxCards);   
+        loadCards(slideContainer[i],maxCards,resize);   
     }
 }
 
-function loadCards(slideContainer, maxCards){
+function loadCards(slideContainer, maxCards,resize){
     var listItem, data;
     
     for(var i = 1; i <= maxCards; i++){
         listItem = document.createElement('li');
         listItem.classList.add('card');
-        listItem.setAttribute('data-animate','fade-in');
-        listItem.setAttribute('data-animate-delay',i*2);
+        if(!resize){
+            listItem.setAttribute('data-animate','fade-in');
+            listItem.setAttribute('data-animate-delay',i*2);
+        }
         if(i==1){
             listItem.classList.add('start-slide');
         }
@@ -362,4 +366,7 @@ window.addEventListener('load', function(){
     animateOnScroll()
 })
 
+window.addEventListener('resize', function(){
+    slideInit(true);
+})
 

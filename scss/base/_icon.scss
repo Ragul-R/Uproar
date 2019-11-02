@@ -1,4 +1,4 @@
-.icon-action,.icon-adventure,.icon-strategy,.icon-casual,.icon-intellectual,.icon-sports{
+.icon-category{
     @include icon(18px,18px);
     fill-opacity: .5;
     .category-list>li:hover &{
